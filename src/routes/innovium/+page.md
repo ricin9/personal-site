@@ -70,7 +70,7 @@ the app's architecture is simple and common, a backend service that communicates
 ## database schema
 
 <figure>
-    <img src="/src/routes/innovium/prisma-erd.svg"
+    <img src="/prisma-erd.svg"
          alt="database schema">
     <figcaption>database schema generated from prisma schema with <a href="https://prisma-erd.simonknott.de">prisma-erd.simonknott.de</a></figcaption>
 </figure>
