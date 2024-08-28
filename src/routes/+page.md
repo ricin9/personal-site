@@ -11,6 +11,10 @@
 
 - to be added later
 
+### small projects and demoes
+
+- using S3-compatible object storage (Cloudflare R2) with SvelteKit for simple and multipart uploads using presigned keys[link](https://sveltekit-r2-storage.miloudi.dev/), [source code](https://github.com/ricin9/sveltekit-r2-storage)
+
 ### books
 
 - sql antipatterns (very helpful)

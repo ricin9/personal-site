@@ -1,3 +1,7 @@
+<script>
+  import SvgPanZoom from "$lib/components/SvgPanZoom.svelte";
+</script>
+
 [home](/)
 
 # Innovium
@@ -69,10 +73,47 @@ the app's architecture is simple and common, a backend service that communicates
 
 ## database schema
 
-<figure>
-    <img src="/prisma-erd.svg"
-         alt="database schema">
-    <figcaption>database schema generated from prisma schema with <a href="https://prisma-erd.simonknott.de">prisma-erd.simonknott.de</a></figcaption>
-</figure>
+<SvgPanZoom imageUrl="/prisma-erd.svg" />
+
+_database schema generated from prisma schema with [prisma-erd.simonknott.de](https://prisma-erd.simonknott.de)_
+
+## Is this a good database design?
+
+well let's first define the project's mission statement and its objectives
+
+### mission statement
+
+the web application allows final year students, the different university departments to process and track a projects conforming to the order of 1275.
+
+### mission objectives
+
+- Allow **final year students** to submit project proposals
+- Allow the university's **scientific committee** to review project proposals and accept/refuse them
+- Force **project leader** to modify the project after receiving acceptation with reservation
+- Give **project supervisors** ability to assign and track tasks to the project members.
+- Give **internship service** ability to organize and schedule project defense after sufficient project progress
+- Allow **internship service** to assign jury president, members and invitees of project defense.
+- Give **project defense's jury president** ability to deliberate the project defense results by assigning grades to each member
+- Allow **internship service** to print diplomas.
+
+### business rules
+
+the project has many business rules and constraints that play a **major** factor in the database design, these may not be all of them as i am writing this from memory.
+
+1. A project has at least 1 and at most 6 students
+1. One of the project members has to be the project's owner and leader and they must be a final year student (5th year)
+1. A project must have one principal supervisor, and two optional secondary supervisors (1-3 supervisors)
+1. Project supervisors is a university professor/teacher
+1. Project submission must be reviewed by the scientific committee of the university in which the project owner studies
+1. Project submission review yields 3 possible responses, acceptation, refusal, acceptation with reservation
+   - in case of acceptation with reservation the project owner must modify the project details according to the scientific committee's wishes.
+1. The project's defense must be organized by the internship service of the university in which the project owner studies
+1. The project's defense jury's president and members must be professors/teachers, the jury invitees can be teachers or individuals not related to university (ex: economy and financial expert)
+1. the web application has 5 distinct periods
+   1. Project submission period : web app allows only project submissions.
+   1. Initial Project submission review : submissions are closed and now submitted projects are reviewed by the scientific committee
+   1. Project's initial decision appeal : projects that received _accepted with reservation_ decision are allowed to be modified by the project's owner
+   1. Project's appeal's review : the scientific committee reviews changes and then gives final decision (acceptation or refusal)
+   1. Project development : now each project develops at its own pace, this period also includes project's defense.
 
 <!-- docs https://drive.google.com/drive/folders/1l3DaxVP1UDcCj3FwZYgWdbeMtNOj8_Fx?usp=drive_link -->
