@@ -17,6 +17,8 @@
 
 - Passwordless login implementation through magic links sent by email, made in sveltekit + cloudflare pages + turso db (libsql) [link](https://passwordless-login.miloudi.dev/), [source code](https://github.com/ricin9/sveltekit-passwordless-login)
 
+- login flow using time-based one-time passwords (TOTP) instead of permanent passwords, made in sveltekit + turso db [link](https://totp-login.miloudi.dev), [source code](https://github.com/ricin9/sveltekit-totp-login)
+
 ### books
 
 - sql antipatterns (very helpful)
