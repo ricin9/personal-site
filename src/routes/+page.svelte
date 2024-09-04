@@ -46,6 +46,25 @@
     <section>
       <h2 class="section-title">Small Projects and Demos</h2>
       <div class="demo-item">
+        <h3 class="demo-title">Northwind REST Api</h3>
+        <p class="demo-description">
+          Implemented REST Api for Northwind sample db including create update
+          delete operations with various constraints + filter pagination and
+          sorting. Stack : Hono.js, Drizzle ORM, Turso DB. Deployed on
+          Cloudflare Workers. Documentation coming soon.
+        </p>
+        <a
+          href="https://northwind-api.miloudi.dev/"
+          class="project-link"
+          target="_blank">Demo</a
+        >
+        <a
+          href="https://github.com/ricin9/northwind-hono-api"
+          class="source-link"
+          target="_blank">Source Code</a
+        >
+      </div>
+      <div class="demo-item">
         <h3 class="demo-title">Cloudflare R2 Object Storage</h3>
         <p class="demo-description">
           Using S3-compatible object storage with SvelteKit for simple and
@@ -158,9 +177,6 @@
     --background-color: #f5f7fa;
     --text-color: #34495e;
     --accent-color: #e74c3c;
-  }
-
-  html {
     scroll-behavior: smooth;
   }
 
