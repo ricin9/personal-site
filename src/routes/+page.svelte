@@ -50,8 +50,8 @@
         <p class="demo-description">
           Implemented REST Api for Northwind sample db including create update
           delete operations with various constraints + filter pagination and
-          sorting. Stack : Hono.js, Drizzle ORM, Turso DB. Deployed on
-          Cloudflare Workers. Documentation coming soon.
+          sorting on all resources. Stack : Hono.js, Drizzle ORM, Turso DB. Deployed on
+          Cloudflare Workers.
         </p>
         <a
           href="https://northwind-api.miloudi.dev/"
