@@ -1,11 +1,13 @@
+<head>
+  <title>Mohamed Miloudi</title>
+</head>
 <body>
   <nav class="nav-bar">
     <div class="nav-container">
-      <a href="#" class="nav-logo">Mohamed Miloudi</a>
+      <a href="/" class="nav-logo">Mohamed Miloudi</a>
       <div class="nav-links">
         <a href="#info" class="nav-link">Info</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#demos" class="nav-link">Demos</a>
         <a href="#books" class="nav-link">Books</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
@@ -28,7 +30,7 @@
       </div>
     </section>
 
-    <span class="section-anchor" id="projects"></span>
+    <!-- <span class="section-anchor" id="projects"></span>
     <section>
       <h2 class="section-title">Projects</h2>
       <div class="project-item">
@@ -40,11 +42,33 @@
         </p>
         <p><em>Details coming soon...</em></p>
       </div>
-    </section>
+    </section> -->
 
-    <span class="section-anchor" id="demos"></span>
+    <span class="section-anchor" id="projects"></span>
     <section>
-      <h2 class="section-title">Small Projects and Demos</h2>
+      <h2 class="section-title">Showcase Projects</h2>
+      <div class="demo-item">
+        <h3 class="demo-title">Multi-Tenant SaaS Platform</h3>
+        <p class="demo-description">
+          Developed a robust multi-tenancy solution for SaaS applications with
+          isolated databases per tenant, custom domain support, and automatic
+          SSL. Built with: Sveltekit, Turso, Cloudflare Workers, Cloudflare For
+          SaaS. Features include unique subdomains, user management, and
+          database portability, enhancing security and flexibility for
+          enterprise clients.
+        </p>
+        <p>Documentation and tutorial coming soon.</p>
+        <a
+          href="https://miloudi-mutli-tenancy.software/"
+          class="project-link"
+          target="_blank">Demo</a
+        >
+        <a
+          href="https://github.com/ricin9/sveltekit-multi-tenancy"
+          class="source-link"
+          target="_blank">Source Code</a
+        >
+      </div>
       <div class="demo-item">
         <h3 class="demo-title">Northwind REST Api</h3>
         <p class="demo-description">
