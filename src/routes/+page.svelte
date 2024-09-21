@@ -1,388 +1,513 @@
-<head>
-  <title>Mohamed Miloudi</title>
-</head>
-<body>
-  <nav class="nav-bar">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">Mohamed Miloudi</a>
-      <div class="nav-links">
-        <a href="#info" class="nav-link">Info</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#books" class="nav-link">Books</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohamed Miloudi - Full Stack Developer</title>
+    <style>
+      :root {
+        --bg-color: #0f172a;
+        --text-color: #e2e8f0;
+        --accent-color: #60a5fa;
+        --secondary-color: #818cf8;
+        --tertiary-color: #34d399;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--accent-color);
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+
+      section {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 2rem;
+        transition: transform 0.3s ease;
+      }
+
+      section:hover {
+        transform: translateY(-5px);
+      }
+
+      #info,
+      #projects,
+      #skills,
+      #books,
+      #contact {
+        grid-column: span 12;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--secondary-color);
+      }
+
+      .project {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .project h3 {
+        color: var(--tertiary-color);
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-content {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+
+      .project-details {
+        flex: 1;
+      }
+      .project-details p {
+        margin-bottom: 0.75rem;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .project-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .project-button:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-2px);
+      }
+
+      .button-icon {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+      }
+
+      .button-text {
+        font-weight: bold;
+      }
+
+      #skills {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 2rem;
+        transition: transform 0.3s ease;
+      }
+
+      #skills:hover {
+        transform: translateY(-5px);
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-category {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 1.5rem;
+      }
+
+      .skill-category h3 {
+        color: var(--tertiary-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        align-content: center;
+      }
+
+      .skill-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .skill-item {
+        position: relative;
+        padding: 0.3rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .skills-container {
+          grid-template-columns: 1fr;
+        }
+      }
+      .book {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .book h3 {
+        color: var(--tertiary-color);
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .contact-links a {
+        color: var(--accent-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 768px) {
+        .project-content {
+          flex-direction: column;
+        }
+
+        .project-image {
+          width: 100%;
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Mohamed Miloudi</h1>
+        <p>Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+        <nav>
+          <a href="#info">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#books">Books</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="info">
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm Mohamed Miloudi, a 22-year-old final-year Computer Science
+            student from Algeria. As a full-stack web developer, I have a
+            passion for building efficient, scalable backend systems and
+            creating seamless full-stack solutions. My portfolio showcases a
+            range of projects and demos that reflect my skills and enthusiasm
+            for development.
+          </p>
+          <br />
+          <p>
+            I'm continuously exploring new technologies and working on projects
+            that challenge me to grow. My goal is to contribute to innovative
+            projects that push the boundaries of web development.
+          </p>
+        </section>
+
+        <section id="skills">
+          <h2>Skills & Expertise</h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Languages</h3>
+              <ul class="skill-list">
+                <li class="skill-item">JavaScript</li>
+                <li class="skill-item">TypeScript</li>
+                <li class="skill-item">SQL</li>
+                <li class="skill-item">Golang</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Frontend</h3>
+              <ul class="skill-list">
+                <li class="skill-item">Svelte & SvelteKit</li>
+                <li class="skill-item">React</li>
+                <li class="skill-item">Tailwind CSS</li>
+                <li class="skill-item">&lt;/&gt; htmx</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Backend</h3>
+              <ul class="skill-list">
+                <li class="skill-item">NestJs</li>
+                <li class="skill-item">Express.js</li>
+                <li class="skill-item">Hono</li>
+                <li class="skill-item">Golang Fiber</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Databases</h3>
+              <ul class="skill-list">
+                <li class="skill-item">PostgreSQL</li>
+                <li class="skill-item">SQLite</li>
+                <li class="skill-item">Redis</li>
+                <li class="skill-item">MongoDB</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Tools & Other</h3>
+              <ul class="skill-list">
+                <li class="skill-item">Git & GitHub</li>
+                <li class="skill-item">Docker</li>
+                <li class="skill-item">Cloudflare Workers</li>
+                <li class="skill-item">Vercel & Netlify</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>Showcase Projects</h2>
+          <div class="project">
+            <h3>Multi-Tenant SaaS Platform</h3>
+            <div class="project-content">
+              <div class="project-details">
+                <p>
+                  <strong>Description:</strong> Developed a robust multi-tenancy
+                  solution for SaaS applications targeted at enterprise clients.
+                </p>
+                <p>
+                  <strong>Key Features:</strong> Isolated databases per tenant
+                  with support of local backups, unique subdomain per tenant,
+                  custom vanity domain support with automatic SSL.
+                </p>
+                <p>
+                  <strong>Tech Stack:</strong> SvelteKit, Turso, Cloudflare
+                  Workers, Cloudflare For SaaS
+                </p>
+
+                <div class="project-links">
+                  <a
+                    href="https://miloudi-mutli-tenancy.software/"
+                    target="_blank"
+                    class="project-button"
+                  >
+                    <span class="button-icon">🚀</span>
+                    <span class="button-text">Live Demo</span>
+                  </a>
+                  <a
+                    href="https://github.com/ricin9/sveltekit-multi-tenancy"
+                    target="_blank"
+                    class="project-button"
+                  >
+                    <span class="button-icon">💻</span>
+                    <span class="button-text">Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <h3>Northwind REST API</h3>
+            <div class="project-content">
+              <div class="project-details">
+                <p>
+                  <strong>Description:</strong> Created a fully documented
+                  comprehensive REST API for the Northwind database using best
+                  practices.
+                </p>
+                <p>
+                  <strong>Key Features:</strong> CRUD operations, filter by any
+                  column using any comparison operation including (not) in
+                  array, is (not) null. Offset pagination, and multi-column
+                  sorting on all resources. All input (json, query, params) and
+                  output is validated.
+                </p>
+                <p>
+                  <strong>Tech Stack:</strong> Hono.js, Drizzle ORM, Turso DB,
+                  Zod
+                </p>
+              </div>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://northwind-api.miloudi.dev/"
+                target="_blank"
+                class="project-button"
+              >
+                <span class="button-icon">🚀</span>
+                <span class="button-text">Live Demo</span>
+              </a>
+              <a
+                href="https://github.com/ricin9/northwind-hono-api"
+                target="_blank"
+                class="project-button"
+              >
+                <span class="button-icon">💻</span>
+                <span class="button-text">Source Code</span>
+              </a>
+            </div>
+          </div>
+          <div class="project">
+            <h3>Cloudflare R2 Object Storage Integration</h3>
+            <div class="project-content">
+              <div class="project-details">
+                <p>
+                  <strong>Description:</strong> Using S3-compatiable object
+                  storage to upload user files to cloud.
+                </p>
+                <p>
+                  <strong>Key Features:</strong> Simple and multipart uploads
+                  using presigned keys, no bandwidth costs on the server, and
+                  direct uploads to the cloud. Max file size enforcement without
+                  expensive file processing.
+                </p>
+                <p>
+                  <strong>Tech Stack:</strong> SvelteKit, Cloudflare R2, AWS S3
+                  SDK
+                </p>
+              </div>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://sveltekit-r2-storage.miloudi.dev/"
+                target="_blank"
+                class="project-button"
+              >
+                <span class="button-icon">🚀</span>
+                <span class="button-text">Live Demo</span>
+              </a>
+              <a
+                href="https://github.com/ricin9/sveltekit-r2-storage"
+                target="_blank"
+                class="project-button"
+              >
+                <span class="button-icon">💻</span>
+                <span class="button-text">Source Code</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="books">
+          <h2>Recommended Books & Key Takeaways</h2>
+          <div class="book">
+            <h3>SQL Antipatterns</h3>
+            <p>
+              Most helpful book on this list, discusses various SQL
+              anti-patterns and why we should avoid them, the author does not
+              immediately discard the anti-patterns presented but shows
+              situations where they might be applicable because real-world
+              projects can have nuance, and presents multiple solutions and
+              alternatives with straightforward explanation and insight.
+            </p>
+          </div>
+          <div class="book">
+            <h3>Database Design for Mere Mortals</h3>
+            <p>
+              The structured approach to database design and the methodology
+              presented in this book has greatly influenced how I plan and
+              implement data models.
+            </p>
+          </div>
+          <div class="book">
+            <h3>The Pragmatic Programmer</h3>
+            <p>Essentiel read for anyone involved in software engineering.</p>
+          </div>
+          <div class="book">
+            <h3>Clean Code</h3>
+            <p>
+              While I don't follow every rule dogmatically, the concepts of
+              writing readable and maintainable code have significantly improved
+              the quality of my work.
+            </p>
+          </div>
+          <div class="book">
+            <h3>Clean Architecture</h3>
+            <p>
+              The ideas about separation of concerns and dependency management
+              have been particularly useful in designing the structure of my
+              larger projects, like the multi-tenant SaaS platform.
+            </p>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Get in Touch</h2>
+          <p>
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of your visions. Feel free to reach out!
+          </p>
+          <div class="contact-links">
+            <a href="mailto:m.miloudi1357@gmail.com" target="_blank">Email</a>
+            <a
+              href="https://www.linkedin.com/in/miloudi-mohamed"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a href="https://github.com/ricin9" target="_blank">GitHub</a>
+          </div>
+        </section>
+      </main>
     </div>
-  </nav>
-
-  <div class="container">
-    <span class="section-anchor" id="info"></span>
-    <section>
-      <h2 class="section-title">Info</h2>
-      <div class="info-section">
-        <p>
-          I'm <strong>Mohamed Miloudi</strong>, a 22-year-old final-year
-          Computer Science student from Algeria. My passion lies in developing
-          efficient and scalable backend systems, with a strong interest in
-          full-stack development. I'm always exploring new technologies and
-          working on projects that challenge me to learn and grow as a
-          developer.
-        </p>
-      </div>
-    </section>
-
-    <!-- <span class="section-anchor" id="projects"></span>
-    <section>
-      <h2 class="section-title">Projects</h2>
-      <div class="project-item">
-        <h3 class="project-title">Innovium (2023)</h3>
-        <p class="project-description">
-          A web app that digitalizes the startup or patent application process
-          for end-of-study projects, following the recent Algerian Ministerial
-          Order No. 1275.
-        </p>
-        <p><em>Details coming soon...</em></p>
-      </div>
-    </section> -->
-
-    <span class="section-anchor" id="projects"></span>
-    <section>
-      <h2 class="section-title">Showcase Projects</h2>
-      <div class="demo-item">
-        <h3 class="demo-title">Multi-Tenant SaaS Platform</h3>
-        <p class="demo-description">
-          Developed a robust multi-tenancy solution for SaaS applications with
-          isolated databases per tenant, custom domain support, and automatic
-          SSL. Built with: Sveltekit, Turso, Cloudflare Workers, Cloudflare For
-          SaaS. Features include unique subdomains, user management, and
-          database portability, enhancing security and flexibility for
-          enterprise clients.
-        </p>
-        <p>Documentation and tutorial coming soon.</p>
-        <a
-          href="https://miloudi-mutli-tenancy.software/"
-          class="project-link"
-          target="_blank">Demo</a
-        >
-        <a
-          href="https://github.com/ricin9/sveltekit-multi-tenancy"
-          class="source-link"
-          target="_blank">Source Code</a
-        >
-      </div>
-      <div class="demo-item">
-        <h3 class="demo-title">Northwind REST Api</h3>
-        <p class="demo-description">
-          Implemented REST Api for Northwind sample db including create update
-          delete operations with various constraints + filter pagination and
-          sorting on all resources. Stack : Hono.js, Drizzle ORM, Turso DB. Deployed on
-          Cloudflare Workers.
-        </p>
-        <a
-          href="https://northwind-api.miloudi.dev/"
-          class="project-link"
-          target="_blank">Demo</a
-        >
-        <a
-          href="https://github.com/ricin9/northwind-hono-api"
-          class="source-link"
-          target="_blank">Source Code</a
-        >
-      </div>
-      <div class="demo-item">
-        <h3 class="demo-title">Cloudflare R2 Object Storage</h3>
-        <p class="demo-description">
-          Using S3-compatible object storage with SvelteKit for simple and
-          multipart uploads using presigned keys.
-        </p>
-        <a
-          href="https://sveltekit-r2-storage.miloudi.dev/"
-          class="project-link"
-          target="_blank">Demo</a
-        >
-        <a
-          href="https://github.com/ricin9/sveltekit-r2-storage"
-          class="source-link"
-          target="_blank">Source Code</a
-        >
-      </div>
-      <div class="demo-item">
-        <h3 class="demo-title">Passwordless Login</h3>
-        <p class="demo-description">
-          Implementing passwordless login through magic links sent by email,
-          made with SvelteKit, Cloudflare Pages, and Turso DB (libsql).
-        </p>
-        <a
-          href="https://passwordless-login.miloudi.dev/"
-          class="project-link"
-          target="_blank">Demo</a
-        >
-        <a
-          href="https://github.com/ricin9/sveltekit-passwordless-login"
-          class="source-link"
-          target="_blank">Source Code</a
-        >
-      </div>
-      <div class="demo-item">
-        <h3 class="demo-title">TOTP Login Flow</h3>
-        <p class="demo-description">
-          Login flow using time-based one-time passwords (TOTP) instead of
-          permanent passwords, made with SvelteKit and Turso DB.
-        </p>
-        <a
-          href="https://totp-login.miloudi.dev"
-          class="project-link"
-          target="_blank">Demo</a
-        >
-        <a
-          href="https://github.com/ricin9/sveltekit-totp-login"
-          class="source-link"
-          target="_blank">Source Code</a
-        >
-      </div>
-    </section>
-
-    <span class="section-anchor" id="books"></span>
-    <section>
-      <h2 class="section-title">Books</h2>
-      <div class="book-list">
-        <div class="book-item">
-          <div class="book-title">SQL Antipatterns</div>
-          <p>
-            Very helpful in understanding common mistakes in database design.
-          </p>
-        </div>
-        <div class="book-item">
-          <div class="book-title">Database Design for Mere Mortals</div>
-          <p>Beginner-friendly, helps you establish a robust methodology.</p>
-        </div>
-        <div class="book-item">
-          <div class="book-title">The Pragmatic Programmer</div>
-          <p>Essential lessons for practical programming.</p>
-        </div>
-        <div class="book-item">
-          <div class="book-title">Clean Code</div>
-          <p>
-            Guidelines for writing maintainable, and clean code, <a
-              href="https://www.youtube.com/watch?v=OtozASk68Os"
-              target="_blank">but don't take every rule too literally</a
-            >—adapt them to your project's needs.
-          </p>
-        </div>
-        <div class="book-item">
-          <div class="book-title">Clean Architecture</div>
-          <p>
-            Same as previous books but about building scalable and modular
-            systems.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <span class="section-anchor" id="contact"></span>
-    <section>
-      <h2 class="section-title">Contact</h2>
-      <p>Feel free to reach out via email or connect on LinkedIn:</p>
-      <div class="contact-links">
-        <a href="mailto:m.miloudi1357@gmail.com" class="contact-link">Email</a>
-        <a
-          href="https://www.linkedin.com/in/miloudi-mohamed"
-          target="_blank"
-          class="contact-link">LinkedIn</a
-        >
-      </div>
-    </section>
-  </div>
-</body>
-
-<style>
-  :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --background-color: #f5f7fa;
-    --text-color: #34495e;
-    --accent-color: #e74c3c;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: "Roboto", sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-family: "Montserrat", sans-serif;
-    color: var(--secondary-color);
-  }
-
-  .nav-bar {
-    background-color: var(--secondary-color);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .nav-logo {
-    color: var(--background-color);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-
-  .nav-link {
-    color: var(--background-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .nav-link:hover {
-    color: var(--primary-color);
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 10px;
-  }
-
-  .info-section {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-
-  li {
-    margin-bottom: 15px;
-  }
-
-  .project-item,
-  .demo-item {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .project-title,
-  .demo-title {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-  }
-
-  .project-description,
-  .demo-description {
-    margin-bottom: 15px;
-  }
-
-  .project-link,
-  .source-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-  }
-
-  .project-link:hover,
-  .source-link:hover {
-    color: var(--accent-color);
-  }
-
-  .book-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-
-  .book-item {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .book-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .contact-links {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .contact-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  .contact-link:hover {
-    background-color: var(--accent-color);
-  }
-
-  .section-anchor {
-    display: block;
-    position: relative;
-    top: -80px;
-    visibility: hidden;
-  }
-
-  @media (max-width: 600px) {
-    .nav-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .nav-links {
-      margin-top: 10px;
-    }
-
-    .book-list {
-      grid-template-columns: 1fr;
-    }
-
-    .section-anchor {
-      top: -120px;
-    }
-  }
-</style>
+  </body>
+</html>
