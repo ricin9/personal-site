@@ -354,7 +354,7 @@
 
                 <div class="project-links">
                   <a
-                    href="https://miloudi-mutli-tenancy.software/"
+                    href="https://chat.miloudi.dev/"
                     target="_blank"
                     class="project-button"
                   >
@@ -362,7 +362,7 @@
                     <span class="button-text">Live Demo</span>
                   </a>
                   <a
-                    href="https://github.com/ricin9/sveltekit-multi-tenancy"
+                    href="https://github.com/ricin9/chat-redis-pubsub"
                     target="_blank"
                     class="project-button"
                   >
