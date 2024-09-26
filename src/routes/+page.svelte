@@ -20,7 +20,7 @@
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: var(--bg-color);
         color: var(--text-color);
         line-height: 1.6;
@@ -101,7 +101,9 @@
         border-radius: 10px;
         padding: 1.5rem;
         margin-bottom: 2rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
       }
       .project:hover {
         transform: translateY(-5px);
@@ -141,7 +143,9 @@
         color: var(--bg-color);
         text-decoration: none;
         border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
       }
 
       .project-button:hover {
@@ -328,6 +332,48 @@
         <section id="projects">
           <h2>Showcase Projects</h2>
           <div class="project">
+            <h3>Real-time Chat App</h3>
+            <div class="project-content">
+              <div class="project-details">
+                <p>
+                  <strong>Description:</strong> Developed a scalable, performant
+                  and modern real-time messaging app that supports rooms with admin
+                  role, message history, and user authentication.
+                </p>
+                <p>
+                  <strong>Key Features:</strong>
+                  Real-time room-based with admin role messaging, Persistent chat
+                  history, Persistant unread message count for each room, Admin can
+                  add, kick, promote, demote a member, Online status for users, Responsive
+                  design, and more ...
+                </p>
+                <p>
+                  <strong>Tech Stack:</strong> Golang, Fiber, Redis, Websockets,
+                  HTMX, TailwindCSS, Docker.
+                </p>
+
+                <div class="project-links">
+                  <a
+                    href="https://miloudi-mutli-tenancy.software/"
+                    target="_blank"
+                    class="project-button"
+                  >
+                    <span class="button-icon">🚀</span>
+                    <span class="button-text">Live Demo</span>
+                  </a>
+                  <a
+                    href="https://github.com/ricin9/sveltekit-multi-tenancy"
+                    target="_blank"
+                    class="project-button"
+                  >
+                    <span class="button-icon">💻</span>
+                    <span class="button-text">Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project">
             <h3>Multi-Tenant SaaS Platform</h3>
             <div class="project-content">
               <div class="project-details">
@@ -336,13 +382,13 @@
                   solution for SaaS applications targeted at enterprise clients.
                 </p>
                 <p>
-                  <strong>Key Features:</strong> Isolated databases per tenant
-                  with support of local backups, unique subdomain per tenant,
-                  custom vanity domain support with automatic SSL.
+                  <strong>Key Features:</strong> Isolated databases per tenant with
+                  support of local backups, unique subdomain per tenant, custom vanity
+                  domain support with automatic SSL.
                 </p>
                 <p>
-                  <strong>Tech Stack:</strong> SvelteKit, Turso, Cloudflare
-                  Workers, Cloudflare For SaaS
+                  <strong>Tech Stack:</strong> SvelteKit, Turso, Cloudflare Workers,
+                  Cloudflare For SaaS
                 </p>
 
                 <div class="project-links">
@@ -371,20 +417,17 @@
             <div class="project-content">
               <div class="project-details">
                 <p>
-                  <strong>Description:</strong> Created a fully documented
-                  comprehensive REST API for the Northwind database using best
-                  practices.
+                  <strong>Description:</strong> Created a fully documented comprehensive
+                  REST API for the Northwind database using best practices.
                 </p>
                 <p>
-                  <strong>Key Features:</strong> CRUD operations, filter by any
-                  column using any comparison operation including (not) in
-                  array, is (not) null. Offset pagination, and multi-column
-                  sorting on all resources. All input (json, query, params) and
-                  output is validated.
+                  <strong>Key Features:</strong> CRUD operations, filter by any column
+                  using any comparison operation including (not) in array, is (not)
+                  null. Offset pagination, and multi-column sorting on all resources.
+                  All input (json, query, params) and output is validated.
                 </p>
                 <p>
-                  <strong>Tech Stack:</strong> Hono.js, Drizzle ORM, Turso DB,
-                  Zod
+                  <strong>Tech Stack:</strong> Hono.js, Drizzle ORM, Turso DB, Zod
                 </p>
               </div>
             </div>
@@ -412,18 +455,17 @@
             <div class="project-content">
               <div class="project-details">
                 <p>
-                  <strong>Description:</strong> Using S3-compatiable object
-                  storage to upload user files to cloud.
+                  <strong>Description:</strong> Using S3-compatiable object storage
+                  to upload user files to cloud.
                 </p>
                 <p>
-                  <strong>Key Features:</strong> Simple and multipart uploads
-                  using presigned keys, no bandwidth costs on the server, and
-                  direct uploads to the cloud. Max file size enforcement without
-                  expensive file processing.
+                  <strong>Key Features:</strong> Simple and multipart uploads using
+                  presigned keys, no bandwidth costs on the server, and direct uploads
+                  to the cloud. Max file size enforcement without expensive file
+                  processing.
                 </p>
                 <p>
-                  <strong>Tech Stack:</strong> SvelteKit, Cloudflare R2, AWS S3
-                  SDK
+                  <strong>Tech Stack:</strong> SvelteKit, Cloudflare R2, AWS S3 SDK
                 </p>
               </div>
             </div>
@@ -501,8 +543,7 @@
             <a href="mailto:m.miloudi1357@gmail.com" target="_blank">Email</a>
             <a
               href="https://www.linkedin.com/in/miloudi-mohamed"
-              target="_blank"
-              >LinkedIn</a
+              target="_blank">LinkedIn</a
             >
             <a href="https://github.com/ricin9" target="_blank">GitHub</a>
           </div>
