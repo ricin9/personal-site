@@ -20,7 +20,7 @@
       }
 
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-color: var(--bg-color);
         color: var(--text-color);
         line-height: 1.6;
@@ -256,6 +256,7 @@
           <a href="#projects">Projects</a>
           <a href="#books">Books</a>
           <a href="#contact">Contact</a>
+          <a href="/fr" lang="fr" hreflang="fr">Version Français</a>
         </nav>
       </header>
 
